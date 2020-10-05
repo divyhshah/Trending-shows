@@ -77,9 +77,7 @@ body {
   display: grid;
   place-items: center;
   background-color: #537895;
-  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
-
-  
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%); 
 }
 
 ul {
@@ -118,3 +116,18 @@ h3 {
   border-radius: 18px;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 20px 18px rgba(0,0,0,0.3);
 }
+
+/*Added media prefs for the responsive design*/
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .hs{
+    display: block;
+  }
+  .item{
+    margin: .5rem;
+  }
+  body{
+    background-repeat: no-repeat; /*repeat is turned off*/ 
+  }
+}
+
+
