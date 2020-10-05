@@ -1,0 +1,27 @@
+{% extends "display.html" %}
+
+  <div class="app">
+    {% block content %}
+    
+    <ul class="hs">
+      {% for i in info%}
+      <li class="item">
+      <img src="{{ i['URL'] }}" class="img-fluid z-depth-4 rounded" width="280px" height="200px"><br>
+      <h3 class="account-heading">{{ i['Title'] }}</h3>
+      <p class="text-secondary">
+        <img src="https://cdn3.iconfinder.com/data/icons/christmas-winter-2/234/xmas-christmas-december-winter-holdiays_71-128.png", width="28" height="28">
+        Popularity: {{ i['Popularity'] }}</p>
+      <p class="text-secondary">
+        <img src="https://cdn2.iconfinder.com/data/icons/school-set-2/512/14-128.png", width="22" height="22">
+        Release-Date: {{ i['ReleaseDate'] }}</p>
+      <p class="text-secondary">Known For:{{ i['KnownFor'] }}</p>
+      <p class="text-secondary">
+        <img src="https://cdn4.iconfinder.com/data/icons/infy-basic-collection/48/star-1-256.png", width="22" height="22">
+        Rating: {{ i['AvgVote'] }}</p>
+      </li>
+    {% endfor %}
+    </ul>
+
+  {% endblock content %}
+  </div>
+
