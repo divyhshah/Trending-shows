@@ -32,5 +32,5 @@ def trending():
 
 if __name__ == "__main__":
     app.debug = False
-    port = int(os.environ.get('PORT', 33507))
+    port = int(os.environ.get('PORT', 5555))       # Run the application on the available ports
     waitress.serve(app, port=port)
