@@ -7,10 +7,12 @@ import json
 from requests.exceptions import ConnectionError
 import ast
 
+## Get hashbale dictionary in terms of tuple 
 class hashabledict(dict):
     def __hash__(self):
         return hash(tuple(sorted(self.items())))
 
+## Get output dictionary
 def get_trending():
     qp = hashabledict(request.args)
     return {"data": _get_trending(qp)}
