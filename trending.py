@@ -25,7 +25,7 @@ def _get_trending(qp):
     path = "https://api.themoviedb.org/3/"
     img_url = "https://image.tmdb.org/t/p/w500"
 
-    api = '3f5c5b3fe404cdf71e5ea07fbc5daf22'
+   
     find  = "trending"
     parameter_dict = {'api_key': api}
     get_url = path+find+'/'+media+'/'+timewindow+'?' + urllib.parse.urlencode(parameter_dict)
