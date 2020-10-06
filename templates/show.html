@@ -1,9 +1,35 @@
-{% extends "display.html" %}
+{% extends "display.html" %} {% block content %}
 
-  <div class="app">
-    {% block content %}
-    
-    <ul class="hs">
+<div class="container mt-5">
+
+  <div class="row justify-content-center">
+    {% for i in info%}
+    <div class="card movie_card">
+      <img src="{{ i['URL'] }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <center>
+          <h5 class="card-title">{{ i['Title'] }}</h5>
+        </center>
+        <center>
+          <p class="movie_info"><i class="fas fa-heart"></i>&nbsp;Popularity : {{ i['Popularity'] }}</p>
+        </center>
+        <center>
+          <p class="movie_info"> <i class="fa fa-calendar"></i>&nbsp;Release-Date : {{ i['ReleaseDate'] }}</p>
+        </center>
+        <center>
+          <p class="movie_info"> <i class="fas fa-user-tie"></i>&nbsp;Known For : {{ i['KnownFor'] }}</p>
+        </center>
+        <center>
+          <p class="movie_info"><i class="fas fa-star"></i>&nbsp;Rating : {{ i['AvgVote'] }}</p>
+        </center>
+
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- <ul class="hs">
       {% for i in info%}
       <li class="item">
       <img src="{{ i['URL'] }}" class="img-fluid z-depth-4 rounded" width="280px" height="200px"><br>
@@ -20,8 +46,6 @@
         Rating: {{ i['AvgVote'] }}</p>
       </li>
     {% endfor %}
-    </ul>
+    </ul> -->
 
-  {% endblock content %}
-  </div>
-
+{% endblock content %}

@@ -1,69 +1,121 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-    <!--meta keyword for content and description-->
-    <meta name="description" content="This website gives you the information about trending shows and personalized recommendation">
-    <meta name="keywords" content="trendingmovies, trending movies, trending shows, latest movies, latest series, trending series, divy shah">
-    <meta name="author" content="Divy Shah">
+  <!--meta keyword for content and description-->
+  <meta name="description"
+    content="This website gives you the information about trending shows and personalized recommendation">
+  <meta name="keywords"
+    content="trendingmovies, trending movies, trending shows, latest movies, latest series, trending series, divy shah">
+  <meta name="author" content="Divy Shah">
 
-    <!-- Required meta tags -->
-    <meta name="google-site-verification" content="usV4YbEbC9H7LvM9ArxaVAZm_sttoxXh1KqqPZ4VH3s" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta name="google-site-verification" content="usV4YbEbC9H7LvM9ArxaVAZm_sttoxXh1KqqPZ4VH3s" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/movie-trailer-1/64/15_Trending_Movie_hot_clip_film-512.png" type="image/png" sizes="16x16">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="icon"
+    href="https://cdn3.iconfinder.com/data/icons/movie-trailer-1/64/15_Trending_Movie_hot_clip_film-512.png"
+    type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='show.css') }}">
 
-    <!-- Google Analytics -->
+  <!-- Google Analytics -->
 
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  
-  ga('create', 'UA-XXXXX-Y', 'auto');
-  ga('send', 'pageview');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
   </script>
 
   <!-- End Google Analytics -->
 
-    <title>Trending - Movies | Series | People</title>
+  <title>Trending - Movies | Series | People</title>
 </head>
 
 <body>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="/?media=movie">
-            <img src='https://cdn3.iconfinder.com/data/icons/photography-ui/64/_Director_Board-256.png' width="28" height="28"> Movies</a>
-          <a class="navbar-brand mr-4" href="/?media=tv">
-            <img src='https://cdn1.iconfinder.com/data/icons/winter-04-filled/64/296-Winter_TV_Show_2-128.png' width="28" height="28"> TV series</a>
-          <a class="navbar-brand mr-4" href="/?media=person">
-            <img src='https://cdn1.iconfinder.com/data/icons/hobby-icostory-black-and-white/64/theater-acting-actor-mask-256.png' width="28" height="28"> People</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-          </div>
+  <nav class="navbar navbar-expand-lg  index fixed-top navbar-light">
+    <a class="navbar-brand movies-nav" href="/?media=movie"><img
+        src='https://cdn3.iconfinder.com/data/icons/photography-ui/64/_Director_Board-256.png' width="28" height="28">
+      Movies
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link tvseries-nav" href="/?media=tv"><img
+              src='https://cdn1.iconfinder.com/data/icons/winter-04-filled/64/296-Winter_TV_Show_2-128.png' width="28"
+              height="28"> TV series<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link people-nav" href="/?media=person"><img
+              src='https://cdn1.iconfinder.com/data/icons/hobby-icostory-black-and-white/64/theater-acting-actor-mask-256.png'
+              width="28" height="28"> People</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+  <!-- <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/?media=movie">
+          <img src='https://cdn3.iconfinder.com/data/icons/photography-ui/64/_Director_Board-256.png' width="28"
+            height="28"> Movies</a>
+        <a class="navbar-brand mr-4" href="/?media=tv">
+          <img src='https://cdn1.iconfinder.com/data/icons/winter-04-filled/64/296-Winter_TV_Show_2-128.png' width="28"
+            height="28"> TV series</a>
+        <a class="navbar-brand mr-4" href="/?media=person">
+          <img
+            src='https://cdn1.iconfinder.com/data/icons/hobby-icostory-black-and-white/64/theater-acting-actor-mask-256.png'
+            width="28" height="28"> People</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header> -->
 
-    <main role="main" class="container">
-        {% block content %}{% endblock %}
-    </main>
+  <main role="main" class="container">
+    {% block content %}{% endblock %}
+  </main>
 
- 
-<footer class="page-footer font-small black">
-  <div class="footer-copyright text-center py-3" style="color: #cbd5db"}>Created By:
-    <a href="mailto:divyshah1712@gmail.com" style="color: #cbd5db"> Divy Shah</a>
-  </div>
-</footer>
+
+  <footer class="page-footer font-small black">
+    <div class="footer-copyright text-center py-3" style="color: #cbd5db" }>Created By:
+      <a href="mailto:divyshah1712@gmail.com" style="color: #cbd5db"> Divy Shah</a>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 </body>
+
 </html>
